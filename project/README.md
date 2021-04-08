@@ -1,31 +1,14 @@
 ## Description
-This interrupt-driven program flashes the LEDs in a silly pattern.
+This directory contains demo programs that demonstrate basic I/O using timer and button interrupts.
 
-## Exploration
+Program | Description
+------- | -----------
+Blink   | Uses timer interrupts to flash the LEDs in a silly pattern.
+Button  | Uses interrupts to detect when a switch is pressed or released.
+Buzzer  | Emits a single continuous note from the buzzer.
 
-_Write some some code in Assembly Language_
+## How to Use
 
-Translate led.c to led_s.s, and modify the Makefile to reference it.  Remember
+The Makefile in this direcory contains rules to run the Makefile in each demo directory. Use **make** in this directory to build all demo programs and the timer library. Once the programs are built, you can load the program onto the MSP430 by changing into the corresponding demo directory and using **make load**.
 
-* to put global and static vars in the data segment and instructions in the
-text segment using the .data and .text directives,
-* to make global symbols visible to other modules using .global, and
-* to import external symbols from other modules with .extern
-
-_Changing speed:_ Figure out how to flash the lights faster or slower.  Determine if there's a speed where the lights don't appear to flash... but glow instead!
-
-_Counting to three:_  Change the program to slowly and repeatedly
-count from zero to three, displaying the value in binary using the red
-& green lights. This is simpler than the program we provided.
-
-## Some Advice
-When creating your own variants to the demo programs,
-it's probably a good idea to keep a copy of the original program (or really understand how _git checkout_ works).  
-
-
-
-
-
-
-
-
+You may use **mspdebug rf2500 "erase"** to clear a program from the MSP430.
