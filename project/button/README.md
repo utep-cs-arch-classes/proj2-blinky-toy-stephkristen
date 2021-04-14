@@ -1,28 +1,16 @@
+# Lab 2: Blinky-Buzzy Toy
+
+
+
 ## Description
-This program uses interrupts to detect when a switch is pressed or
-released.
 
-Press S1, and the green LED is illuminated.  Release it, and the red
-LED is illuminated instead.
+In this lab, a toy was created using an MSP430. Using this program we are able to use all 4 buttons to control different states of the machine using LED's and sounds. 
 
-## Exploration
-_LED toggle:_  A great initial project would be to modify this program to
-implement a state machine that "toggled" between the red and green LEDs
-each time the button is pressed. The LED should remain illuminated until
-the next time the button is pressed.
+## How to run
+To run the program, make sure the MSP430 is connected, then open the **project** directory and enter "*make clean*" and then "*make load*".  After this the project will run and you will be able to use toy's buttons!
 
-_Separation of duties:_ Input and output are not always so closely
-connected.  Frequently an input begins a computation that eventually
-results in an output. For example, pressing "next song" on a streaming
-audio player begins a complicated multi-stage process that eventually
-results in a different song being played.  Suggestion: start with
-something simple such as responding to the buttons using interrupts to
-set state variables, and update the LEDs when the timer interrupt
-occurs.  
-
-_Time and button interaction:_
-Integrate the timer mechanisms from the blink demo and have the button affect the blink sequence.
-
-## Some Advice
-When creating your own variants to the demo programs,
-it's probably a good idea to keep a copy of the original program (or really understand how _git checkout_ works).  
+## Button Functionality
+**SW1 (Switch 1) :** Will turn off all LED's and sounds
+**SW2 (Switch 2) :** Will dim red light to 25%, 50%, 75% and 100% brightness. Then after dim green light to 25%, 50%, 75% and 100% brightness. Then repeated again.
+**SW3 (Switch 3) :** Will turn on green and red LED at the same time
+**SW4 (Switch 4) :** Will turn off green and red LED and make a sound.
