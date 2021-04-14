@@ -1,6 +1,7 @@
 #include <msp430.h>
 #include "switches.h"
 #include "led.h"
+#include "stateMachines.h"
 
 char switch1_state_down, switch2_state_down, switch3_state_down, switch4_state_down, switch_state_changed; /* effectively boolean */
 
@@ -35,15 +36,15 @@ switch_interrupt_handler()
   switch4_state_down = (p2val & SW4);
 
   if(switch1_state_down == 0) {
-    switch_state_changed = 1;
+    switch_state_changed = 0;
   }
   else if (switch2_state_down == 0) {
-    switch_state_changed = 2;
+    switch_state_changed = 1;
   }
   else if (switch3_state_down == 0) {
-    switch_state_changed = 3;
+    switch_state_changed = 2;
   }
   else if (switch4_state_down == 0) {
-    switch_state_changed = 4;
+    switch_state_changed = 3;
   }
 }

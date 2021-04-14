@@ -7,7 +7,7 @@
 void main(void) 
 {  
   configureClocks();
-  //switch_init();
+  switch_init();
   led_init();
   assembly_buzzerInit();
 

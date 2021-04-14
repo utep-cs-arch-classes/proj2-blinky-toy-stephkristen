@@ -41,7 +41,6 @@ char toggle_green()             /* always toggle green */
 
 void redOn(){
   red_on = 1;
-  buzzer_set_period(1000);
 
   led_changed = 1;
   led_update();
@@ -49,7 +48,6 @@ void redOn(){
 
 void redOff(){
   red_on = 0;
-  buzzer_set_period(0);
 
   led_changed = 1;
   led_update();
